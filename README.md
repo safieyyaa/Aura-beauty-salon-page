@@ -99,27 +99,6 @@ Technologies Used
 - Google Fonts
 - Local Image Assets
 
-Project Structure
-
-Aura-Beauty/
-│
-├── AURA BEAUTY/
-│   ├── safia.html
-│   ├── mona.html
-│   ├── zina.html
-│   ├── fatima.html
-│   ├── asma.html
-│   ├── nora.html
-│   ├── LOGIN.html
-│   ├── cart.html
-│   ├── NEW.html
-│   ├── aura.css
-│   └── image assets
-│
-├── VS/
-├── log in.html
-├── safia.html
-└── المشروع.html
 
 Main Pages
 
@@ -134,23 +113,6 @@ File| Description
 "cart.html"| Shopping Cart and Wishlist
 "aura.css"| Shared Website Styling
 
-How to Run
-
-Aura Beauty is a front-end project and does not require any additional installation.
-
-Clone the Repository
-
-git clone https://github.com/AsmaaMb1-prog/Aura-Beauty.git
-
-Open the Project
-
-Navigate to the project directory:
-
-cd Aura-Beauty
-
-Then open the following file in a web browser:
-
-AURA BEAUTY/safia.html
 
 Project Purpose
 
