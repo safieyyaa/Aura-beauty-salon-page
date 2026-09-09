@@ -1,0 +1,149 @@
+* { 
+    margin: 0; padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'cairo', sans-serif; 
+}
+body {
+  margin: 0;
+  background-color:#fae6cfd7;
+  line-height: 1.6;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background-color:#984f5b;
+  position:static;
+  top: 0;
+}
+
+nav h1 {
+  color:  #ffffff;
+;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #551532;
+  font-size: 20px;
+  transition: 0.3s;
+  padding: 10px;
+  
+}
+li.acc{
+  background-color: #dcc4cf;
+  border-radius: 40px;
+ 
+}
+li.acc a:hover{
+  font-weight: bold;
+  color: #b76481;}
+
+nav ul li a:hover {
+  color: #debbce;
+}
+@media (max-width: 992px) {
+     .products-grid {
+     grid-template-columns: repeat(2, 1fr);
+                    }
+     }
+@media (max-width: 600px) {
+   .products-grid {
+    grid-template-columns: repeat(1, 1fr);
+            }
+ .quick-nav {
+   flex-direction: column;
+      }
+  }
+     .details {
+      padding: 60px 20px; 
+    }
+
+    .details h2 {
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 2.8rem;
+      color: #8E7E73;
+      padding-left: 15px;
+      letter-spacing: 1px;
+    }
+
+    .items {
+      display: flex;
+      gap: 20px; 
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .item {
+      width: 350px; 
+      min-height: 500px; 
+      border-radius: 12px;
+      padding: 15px; 
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      background: white;
+      transition: transform 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #E1C1B6;
+      margin-bottom: 20px;
+    }
+
+    .item:hover {
+      transform: translateY(-12px);
+    }
+
+    .item img {
+      width: 100%;
+      height: 220px; 
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px; /*why*/
+    }
+
+    .item h3 {
+      font-size: 1.4rem; 
+      margin: 15px 0 10px;
+      line-height: 1.3;
+    }
+    
+    .item p{
+        text-align: center;
+        padding: 5px 0;
+        font-size: 1.1rem; 
+        line-height: 1.5;
+        margin: 5px 0;
+    }
+
+    .item span {
+      display: block;
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 1.5rem; 
+      color: #984f5b;
+    }
+    
+footer {
+  text-align: center;
+ padding: 3px;
+  background:#984f5b ;
+  color: #ffffff;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+  footer a{
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+    }
