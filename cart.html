@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="aura.css">
+    <title>Shopping Cart & Wishlist</title>
+    <style>
+
+.main-container {
+    width: 60%; 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+
+.section-title {
+    border-left: 5px solid #4d0e13;
+    padding-left: 15px;
+    margin-bottom: 25px;
+    margin-top: 35px;
+}
+
+.section-title h2 {
+    font-size: 28px;
+    color: #7d685a;
+    letter-spacing: 1px;
+}
+.products-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    margin-bottom: 40px;
+}
+.product-card {
+    background: #c0a4a865;
+    display: flex;
+    align-items: center;
+    padding: 15px 30px; /* تباعد قليل لجعله أنحف */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border: 1px solid #d8c4ac;
+    transition: transform 0.2s;
+}
+.product-card:hover {
+    transform: scale(1.1);
+}
+.product-image-container {
+    position: relative;
+    display: inline-block;
+}
+.heart-icon-overlay {
+    position: absolute;
+    top: -5px;      
+    right: -5px;    
+    width: 28px;   
+    height: 28px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+.heart-icon-overlay svg {
+    width: 18px;    
+    height: 18px;
+    fill: #e74c3c;  /* تلوين مسار SVG باللون الأحمر */
+}
+
+.p-img {
+    display: block;
+    width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.p-info {
+    flex: 2;
+    padding: 0 25px;
+}
+
+.p-info h3 {
+    font-size: 20px;
+    color: #34060a;
+    margin-bottom: 12px;
+}
+
+.p-info p {
+    font-size: 15px;
+    color: #632121;
+    line-height: 1.4;
+}
+
+.price {
+    display: block;
+    margin-top: 50px;
+    font-weight: bold;
+    color: #3c865b;
+}
+
+/* التحكم (يمين المستطيل) */
+.p-controls {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+/* صندوق زيادة ونقص العدد */
+.qty-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #4d0e13;
+    border-radius: 6px;
+    background: #fff0f4c0;
+}
+
+.qty-box button {
+    padding: 4px 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.qty-box span {
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+/* ملخص الطلب */
+.order-summary-box {
+    background: #b07a83b7;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #150304;
+}
+
+.summary-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #1e0507;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.item-count{
+    color:#ffffff ;
+    font-weight:500 ;
+    font-size: 15px;
+}
+.promo-input, .pay-select {
+    padding: 8px 12px;
+    border: 1px solid #270709;
+    border-radius: 6px;
+    width: 220px;
+}
+
+.total {
+    font-size: 24px;
+    font-weight: bold;
+    color: #230505;
+    margin-top: 10px;
+}
+
+.pay-now-btn {
+    width: 100%;
+    padding: 15px;
+    background: #269052;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.pay-now-btn:hover {
+    background: #27ae60;
+}
+.call-icon {
+            width: 25px;       
+            height: 18px;
+            fill: #28a745;     
+            cursor: pointer;
+            transition: fill 0.3s;
+        }
+        .call-icon:hover {
+            fill: #1e7e34;     
+        }
+
+    </style>
+</head>
+<body>
+    <nav> 
+    <h1>Aura Beauty</h1>
+    <ul>
+      <li><a href="safia.html">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="acc"><a href="LOGIN.html">Account</a></li>
+     
+    </ul>
+   </nav>
+
+    <div class="main-container" id="Services">
+        
+        <!-- قسم المنتجات ( Products in cart) -->
+        <div class="section-title">
+            <h2> Products in Cart</h2>
+        </div>
+
+        <div class="products-group">
+            <!-- كرت منتج 1 -->
+            <div class="product-card">
+                <img src="ظلال عيون.jpg" alt="product" class="p-img">
+                <div class="p-info">
+                    <h3>Eyeshadow Palette</h3>
+                    <p>A stunning collection of 12 highly-pigmented matte and
+                     shimmer shades, designed for effortless blending and professional eye looks.   .</p>
+                    <span class="price">54 SR</span>
+                </div>
+                <div class="p-controls">
+                    <div class="qty-box">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- كرت منتج 2 -->
+            <div class="product-card">
+                <img src="سيروم1.jpg" alt="product" class="p-img">
+                <div class="p-info">
+                    <h3>Shine Spray</h3>
+                    <p>A weightless finishing spray that provides an immediate
+                       luminous glow and UV protection without any greasy residue. .</p>
+                    <span class="price">50 SR</span>
+                </div>
+                <div class="p-controls">
+                    <div class="qty-box">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- كرت منتج 3 -->
+            <div class="product-card">
+                <img src="مبرد.jpg" alt="product" class="p-img">
+                <div class="p-info">
+                    <h3>Crystal File</h3>
+                    <p>
+ Crafted from high-quality tempered glass to gently shape nails without causing splitting or peeling. Durable and easy to cline</p>
+                    <span class="price">10 SR</span>
+                </div>
+                <div class="p-controls">
+                    <div class="qty-box">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                  
+                </div>
+            </div>
+
+            <!-- كرت منتج 4 -->
+            <div class="product-card">
+                <img src="كريم اساس .jpg" alt="product" class="p-img">
+                <div class="p-info">
+                    <h3>Foundation</h3>
+                    <p>A lightweight, breathable liquid foundation that provides
+                        buildable medium-to-full coverage with a natural, skin-like radiant finish.
+                    </p>
+                    <span class="price"> 65 SR</span>
+                </div>
+                <div class="p-controls">
+                    <div class="qty-box">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم المفضلة (Favorites) -->
+        <div class="section-title">
+            <h2>Favorites</h2>
+        </div>
+
+        <div class="products-group">
+            <!-- مفضلة 1 -->
+            <div class="product-card">
+        <div class="product-image-container">
+             <div class="heart-icon-overlay">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+         </div>
+                <img src="كيراتين.jpg" alt="product" class="p-img">
+                </div>
+                <div class="p-info">
+                    <h3>Keratin serum</h3>
+                    <p>Gently cleanses while infusing hair with essential keratin proteins for a sleek, 
+                        salon-quality finish and effortless manageability.</p>
+                    <span class="price">45 SR</span>
+                </div>
+                <div class="p-controls">
+                    <div class="qty-box">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- مفضلة 2 -->
+            <div class="product-card">
+                    <div class="product-image-container">
+                             <div class="heart-icon-overlay">
+                                 <svg viewBox="0 0 24 24">
+                                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                 </svg>
+                             </div>
+                            <img src="احمر خدود.jpg" alt="product" class="p-img">
+                    </div>
+                <div class="p-info">
+                    <h3>Liquid Blush</h3>
+                    <p>A creamy, easy-to-blend formula that melts into the skin for
+                        a natural, healthy flush of color that lasts all day.
+                    </p>
+                    <span class="price">27 SR</span>
+                </div>
+                <div class="p-controls">
+                    <div class="qty-box">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <!-- مفضلة 3 -->
+            <div class="product-card">
+<div class="product-image-container">
+    <div class="heart-icon-overlay">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+    </div>
+    <img src="زيت.jpg" alt="product" class="p-img">
+</div>
+                    <div class="p-info">
+                    <h3>Hair Oil</h3>
+                    <p>
+                         A multi-purpose therapeutic oil that nourishes the scalp and
+                         strengthens the hair follicle for thicker, healthier-looking hair.</p>
+                    <span class="price">30 SR</span>
+                </div>
+                <div class="p-controls">
+                    <div class="qty-box">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <!-- مفضلة 4 -->
+            <div class="product-card">
+<div class="product-image-container">
+    <div class="heart-icon-overlay">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+    </div>
+    <img src="منتج مناكير 5.jpg" alt="product" class="p-img">
+</div>
+                <div class="p-info">
+                    <h3>Complete Care Set</h3>
+                    <p>An all-in-one professional set featuring essentials for shaping, smoothing,
+                         and hydrating your nails for a salon-quality result at home.</p>
+                    <span class="price"> 65 SR</span>
+                </div>
+                <div class="p-controls">
+                    <div class="qty-box">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- ملخص الطلب -->
+        <div class="order-summary-box">
+            <div class="summary-header">Order info</div>
+            <div class="summary-details">
+                <div class="row">
+                    <span>Subtotal:</span>
+                    <span>179 SR</span>
+                </div>
+                <div class="row">
+                    <span>Produts count :</span>
+                    <span class="item-count">4 Products </span>
+                </div>
+                <div class="row">
+                    <span>Discount Code:</span>
+                    <input type="text" placeholder="Enter Code" class="promo-input">
+                </div>
+                <div class="row">
+                    <span>Payment Method:</span>
+                    <select class="pay-select">
+                        <option>Cash on Delivery</option>
+                        <option>Credit Card</option>
+                        <option>Al-Omqy Bank</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="row total">
+                    <span>Total:</span>
+                    <span>179 SR</span>
+                </div>
+            </div>
+            <button class="pay-now-btn">PAY NOW</button>
+        </div>
+
+    </div>
+     <footer id="about">
+ <h3><b>© 2026 Aura Beauty Salon | All Rights Reserved</b></h3>
+ <h3><svg class="call-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.12.37 2.33.57 3.54.57.55 0 1 .45 1 1V21c0 
+        .55-.45 1-1 1C10.07 22 2 13.93 2 3c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.21.2 2.42.57 3.54.11.35.03.73-.24 
+        1.05l-2.21 2.2z"/>
+    </svg>  Contact</h3>
+    <p>77800000 | aurabeauty@gmail.com</p>
+  <a href="#">Privacy and Policy</a> |
+<a href="#">Terms and Conditions</a></p>
+  </footer>
+</body>
+</html>
+</body>
+</html>
+</body>
+</html>
