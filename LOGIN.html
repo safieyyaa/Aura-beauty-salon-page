@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="aura.css">
+</head>
+<body>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+
+.booking-page { 
+    background: #bb858fcb; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    direction: ltr; 
+}
+
+.booking-card {
+    background: #FFFFFF; 
+    padding: 40px 45px; 
+    border-radius: 25px;
+    position: relative; 
+    width: 100%; 
+    max-width: 500px;
+    box-shadow: 0 25px 50px rgba(184, 178, 170, 0.2); 
+    border: 1px solid #E1C1B6; 
+}
+
+.form-title {
+    color: #8E7E73; 
+    text-align: center;
+    margin-bottom: 55px; 
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+.form-section { margin-bottom: 25px; }
+.input-stack input, .input-stack select { margin-bottom: 12px; }
+
+.field-label {
+    display: block; 
+    margin-bottom: 12px; 
+    color: #8E7E73; 
+    font-weight: 700; 
+    font-size: 11px;
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    border-left: 3px solid #D6BD9F; 
+    padding-left: 12px;
+}
+
+input, select {
+    width: 100%; 
+    padding: 14px 18px; 
+    border: 1.2px solid #E1C1B6; 
+    border-radius: 10px; 
+    background: #F9F6F1; 
+    color: #8E7E73; 
+    font-size: 14px; 
+    outline: none; 
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #B8B2AA;
+}
+
+select:not(.multi-select) {
+    appearance: none; 
+    -webkit-appearance: none;
+    /* السهم بلون 8E7E73 */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238E7E73' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; 
+    background-position: right 15px center; 
+    cursor: pointer;
+}
+
+.multi-select {
+    height: auto; 
+    min-height: 100px; 
+    padding: 10px; 
+    background: #FFF;
+}
+
+.multi-select option:checked {
+    background-color: #D6BD9F !important;
+    color: white;
+}
+
+.custom-picker-row { display: flex; gap: 12px; }
+.picker-group { position: relative; flex: 1; }
+.picker-icon { 
+    position: absolute; left: 15px; top: 50%; 
+    transform: translateY(-50%); 
+    font-size: 14px; 
+    color: #B8B2AA; 
+}
+.picker-group input { padding-left: 40px; }
+
+.confirm-booking-btn {
+    width: 100%; 
+    padding: 18px; 
+    background: #6D3A3C; 
+    color: #FFFFFF; 
+    border: none;
+    border-radius: 12px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    transition: 0.3s;
+}
+.confirm-booking-btn:hover { 
+    background: #7A6D64; 
+    box-shadow: 0 10px 20px rgba(142, 126, 115, 0.2);
+}
+
+/* --- واجهة الملخص --- */
+.summary-view { text-align: center; }
+.check-icon {
+    width: 65px; height: 65px; 
+    background: #6D3A3C; 
+    color: #FFFFFF;
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-size: 30px; 
+    margin: 0 auto;
+}
+
+
+
+.success-title { 
+    color: #8E7E73; 
+    font-size: 22px; 
+    font-weight: 800; 
+    margin-top: 15px; 
+    margin-bottom: 10px; 
+}
+
+.summary-body {
+    background: #F9F6F1; 
+    padding: 25px; 
+    border-radius: 18px;
+    margin-bottom: 30px; 
+    text-align: left; 
+    border: 1px solid #E1C1B6;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+           transition: transform 0.4s ease;
+
+}
+.summary-item { 
+   
+    margin-bottom: 12px; 
+    border-bottom: 1px solid #E1C1B6; 
+    padding-bottom: 8px; 
+    font-size: 14px; 
+    color: #8E7E73;
+}
+
+/* العبارة التحفيزية والزر */
+.note { 
+    font-size: 14px; 
+    color: #8E7E73; 
+    font-weight: 600; 
+    display: block; 
+    margin-bottom: 25px; 
+}
+
+.button-group { display: flex; gap: 12px; }
+
+.back-home-btn, .cancel-booking-btn {
+    flex: 1; 
+    padding: 16px; 
+    border-radius: 12px; 
+    font-weight: 700;
+    text-transform: uppercase; 
+    cursor: pointer; 
+    transition: transform 0.4s ease; 
+}
+
+.back-home-btn {
+    background: transparent; 
+    color: #8E7E73; 
+    border: 2px solid #D6BD9F;
+    transition: transform 0.4s ease;
+}
+.back-home-btn:hover { background: #D6BD9F; color: white; }
+
+.cancel-booking-btn {
+    background: transparent; 
+    color: #B8B2AA; 
+    border: 2px solid #B8B2AA;
+}
+.cancel-booking-btn:hover { 
+    background: #B8B2AA; 
+    color: #FFF; 
+}
+
+.close-btn {
+    position: absolute; top: 20px; right: 20px; 
+    background: #D6BD9F; border: none;
+    font-size: 24px; color: #8E7E73; 
+    cursor: pointer; width: 35px; height: 35px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+}
+.close-btn:hover{
+    background-color: #6D3A3C;
+}
+
+.hidden { display: none; }
+
+ </style>
+<body>
+    <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eure Beauty | Professional Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="booking-page">
+
+    <div class="booking-overlay">
+        <div class="booking-card">
+            <button class="close-btn" onclick="goToHome()">&times;</button>
+
+            <form id="bookingForm">
+                <h2 class="form-title">Book Your Experience</h2>
+
+                <div class="form-section">
+                    <label class="field-label">Contact Details</label>
+                    <div class="input-stack">
+                        <input type="text" id="userName" placeholder="Full Name" required>
+                        <input type="email" id="userEmail" placeholder="Email Address" required>
+                        <input type="tel" id="userPhone" placeholder="Phone Number" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <label class="field-label">Service Selection</label>
+                    <div class="input-stack">
+                        <select id="mainService" onchange="updateSubServices()" required>
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="hair">Hair </option>
+                            <option value="makeup"> Makeup</option>
+                            <option value="nails"> Manicure</option>
+                            <option value="spa"> Spa </option>
+                        </select>
+
+                        <div id="subServiceWrapper" class="hidden-fade" style="display: none; opacity: 0;">
+                            <select id="subService" multiple class="multi-select">
+                                </select>
+                            <small class="helper-text">Hold Ctrl (or Cmd) to select multiple services</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <label class="field-label">Preferred Schedule</label>
+                    <div class="custom-picker-row">
+                        <div class="picker-group">
+                            <span class="picker-icon">📅</span>
+                            <input type="text" id="customDate" placeholder="Date" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                        </div>
+                        <div class="picker-group">
+                            <span class="picker-icon">🕒</span>
+                            <input type="text" id="customTime" placeholder="Time" onfocus="(this.type='time')" onblur="(this.type='text')" required>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="confirm-booking-btn" onclick="processBooking()">Confirm Reservation</button>
+            </form>
+
+            <div id="bookingSummary" class="summary-view hidden">
+                <div class="success-header">
+                    <div class="check-icon">✓</div>
+                    <h3 class="success-title">Booking Confirmed!</h3>
+                    <span class="success-subtitle">We have received your request</span>
+                </div>
+
+                <div class="summary-body">
+                    <div class="summary-item"><strong>Client:</strong> <span id="resName"></span></div>
+                    <div class="summary-item"><strong>Phone:</strong> <span id="resPhone"></span></div>
+                    <div class="summary-item"><strong>Services:</strong> <span id="resService"></span></div>
+                    <div class="summary-item"><strong>Schedule:</strong> <span id="resDateTime"></span></div>
+                </div>
+
+                <div class="summary-footer">
+                    <p class="note">We are excited for your visit and to serve you!</p>
+                    <div class="button-group">
+                        <button class="back-home-btn" onclick="goToHome()">Back to Home</button>
+                        <button class="cancel-booking-btn" onclick="cancelBooking()">Cancel Booking</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToHome() { 
+            // إذا لم يوجد ملف بهذا الاسم سيعيد تحميل الصفحة لضمان عدم حدوث خطأ 404
+            window.location.href = 'index.html'; 
+        }
+
+        const servicesData = {
+            hair: ["Hair Cut & Styling", "Hair Treatments", "Hair Coloring", ],
+            makeup: ["Bridal Glam", "Evening Look", "Soft Glam"],
+            nails: ["Hand Spa Treatments", "Classic Manicure", "Additional Services"],
+            spa: ["Rejuvenating Facial", "Deep Tissue Massage", "Aura Ritual"]
+        };
+
+        function updateSubServices() {
+            const main = document.getElementById('mainService').value;
+            const subWrapper = document.getElementById('subServiceWrapper');
+            const subSelect = document.getElementById('subService');
+            if (main) {
+                subSelect.innerHTML = servicesData[main].map(s => `<option value="${s}">${s}</option>`).join('');
+                subWrapper.style.display = 'block';
+                setTimeout(() => subWrapper.style.opacity = '1', 10);
+            }
+        }
+
+        function processBooking() {
+            const name = document.getElementById('userName').value;
+            const phone = document.getElementById('userPhone').value;
+            const date = document.getElementById('customDate').value;
+            const time = document.getElementById('customTime').value;
+            
+            // استخراج كافة الخدمات المختارة
+            const selectedOptions = Array.from(document.getElementById('subService').selectedOptions).map(opt => opt.value);
+
+            if(!name || !phone || !date || !time || selectedOptions.length === 0) { 
+                alert("Please fill in all fields and select at least one service."); 
+                return; 
+            }
+
+            document.getElementById('bookingForm').style.display = 'none';
+            document.getElementById('resName').innerText = name;
+            document.getElementById('resPhone').innerText = phone;
+            document.getElementById('resService').innerText = selectedOptions.join(', ');
+            document.getElementById('resDateTime').innerText = `${date} at ${time}`;
+            document.getElementById('bookingSummary').classList.remove('hidden');
+        }
+
+        function cancelBooking() {
+            if(confirm("Are you sure you want to cancel this booking?")) {
+                alert("Booking Cancelled.");
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>   
+</body>
+</html>
