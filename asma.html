@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Beauty | Luxury Spa & Wellness</title>
+    
+     <link rel="stylesheet" href="aura.css">
+    <style>
+        :root {
+  --primary: #bfa37e; /* Muted Gold */
+  --dark: #2c2c2c;
+  --light: #f9f7f2;
+  --text: #555;
+}
+.hero {
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('spa.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 15px 40px;
+  background-color: #6D3A3C;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.3s;
+  border-radius: 40px;
+  font-size: 20px;
+}
+
+.btn:hover {
+  background: var(--dark);
+}
+
+/* Services */
+.services {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.section-title {
+  margin-bottom: 50px;
+}
+.service-card {
+  background: white;
+  padding: 40px;
+  transition: 0.3s;
+  border: 1px solid #eee;
+  border-radius: 15px;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.service-card h3 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+.service-card p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* New Card Images */
+.card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* New Promo Card */
+.promo-card {
+  grid-column: 1 / -1;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  animation: auraGlow 4s ease-in-out infinite alternate;
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url(spa_surp\ \(1\).jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.promo-card h3 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.promo-card p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+}
+
+.promo-btn {
+  background: white;
+  color: var(--primary);
+  padding: 12px 35px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.promo-btn:hover {
+  background: var(--dark);
+  color: white;
+  transform: scale(1.05);
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  animation-play-state: paused;
+}
+
+/* Elegant Surprise Animation */
+@keyframes auraGlow {
+  0% {
+    box-shadow: 0 15px 40px rgba(191,163,126,0.3), 0 0 20px rgba(191,163,126,0.1);
+  }
+  100% {
+    box-shadow: 0 20px 50px rgba(191,163,126,0.4), 0 0 40px rgba(191,163,126,0.2);
+  }
+}
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .services {
+    padding: 60px 5%;
+  }
+  .items {
+      display: flex;
+      gap: 20px; 
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .item {
+      width: 350px; 
+      min-height: 500px; 
+      border-radius: 12px;
+      padding: 15px; 
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      background: white;
+      transition: transform 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #E1C1B6;
+      margin-bottom: 20px;
+    }
+
+    .item:hover {
+      transform: translateY(-12px);
+    }
+
+    .item img {
+      width: 100%;
+      height: 220px; 
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px; /*why*/
+    }
+
+    .item h3 {
+      font-size: 1.4rem; 
+      margin: 15px 0 10px;
+      line-height: 1.3;
+    }
+    
+    .item p{
+        text-align: center;
+        padding: 5px 0;
+        font-size: 1.1rem; 
+        line-height: 1.5;
+        margin: 5px 0;
+    }
+
+    .item span {
+      display: block;
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 1.5rem; 
+      color: #984f5b;
+    }
+
+    button {
+      padding: 15px 0px; 
+      border: none;
+      background: #6D3A3C;
+      color: #F9F6F1;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 18px;
+      width: 100%;
+      margin-top: 10px;
+      font-weight: 800;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+    
+    button:hover{
+        /*background: black;
+        transform: scale(1.02);*/
+     background: #c9b399;
+     transform: scale(1.03); /* تكبير بسيط جداً عند اللمس */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    button a{
+      text-decoration: none;
+      color: white;
+    }
+     .glass-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 20px 60px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+
+        .glass-box h1 {
+            color: white;
+            font-size: 2.5rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;}
+            .call-icon {
+            width: 25px;       
+            height: 18px;
+            fill: #28a745;     
+            cursor: pointer;
+            transition: fill 0.3s;
+        }
+        .call-icon:hover {
+            fill: #1e7e34;     
+        }
+    </style>
+</head>
+<body>
+         <nav>
+    <h1>Aura Beauty</h1>
+    <ul>
+      <li><a href="safia.html">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="acc"><a href="LOGIN.html">Account</a></li>
+     
+    </ul>
+  </nav>
+
+    <header class="hero">
+       <div class="glass-box">
+            <h1>Facial and Spa</h1>
+        </div>
+    </header>
+      <div class="promo-card">               
+              <h3>✨ Surprise Delight! ✨</h3>
+              <p>Choose any <strong>two spa services</strong> and enjoy <strong>30% off</strong> + a complimentary herbal elixir!</p>
+              <a href="LOGIN.html" class="promo-btn btn">Unlock Magic</a>
+            </div>
+<section id="services">
+    <section class="services">
+        <div class="section-title">
+            <h2>Our Signature Treatments</h2>
+            <p>Indulge in our curated selection of wellness rituals</p>
+        </div>
+        <div class="items">
+            <div class="item">
+                <img src="Rejuvenating Facial.jpg" alt="Luxury Rejuvenating Facial at Aura" class="card-image">
+                <h3>Rejuvenating Facial</h3>
+                <p>Advanced skincare using organic botanicals to restore your natural glow.</p>
+                 <span>100 SR</span>
+                <button><a href="LOGIN.html">Book Now</a></button>
+            </div>
+            <div class="item">
+                <img src="Aura Ritual.jpg" alt="Aura Ritual Body Treatment" class="card-image">
+                <h3>Aura Ritual</h3>
+                <p>A complete body scrub and essential oil treatment for total relaxation.</p>
+                 <span>150 SR</span>
+                <button><a href="LOGIN.html">Book Now</a></button>
+            </div>
+             <div class="item">
+               <img src="Deep Tissue Massage.jpg" alt="Deep Tissue Massage at Aura Spa" class="card-image">
+               <h3>Deep Tissue Massage</h3>
+               <p>Release tension and find balance with our signature therapeutic massage.</p>
+               <span>55 SR</span>
+                <button><a href="LOGIN.html">Book Now</a></button>
+             </div>
+        </div>
+    </section></section>
+ <footer id="about">
+ <h3><b>© 2026 Aura Beauty Salon | All Rights Reserved</b></h3>
+ <h3><svg class="call-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.12.37 2.33.57 3.54.57.55 0 1 .45 1 1V21c0 
+        .55-.45 1-1 1C10.07 22 2 13.93 2 3c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.21.2 2.42.57 3.54.11.35.03.73-.24 
+        1.05l-2.21 2.2z"/>
+    </svg>  Contact</h3>
+    <p>77800000 | aurabeauty@gmail.com</p>
+  <a href="#">Privacy and Policy</a> |
+<a href="#">Terms and Conditions</a></p>
+  </footer>
+
+</body>
+</html>
