@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Beauty</title>
+    <link rel="stylesheet" href="aura.css">
+    <style>
+.hero {
+  height: 700px;
+  background:linear-gradient(rgba(35,20,25,0.45),rgba(35,20,25,0.45)), url('aura.jpg') center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h2 {
+  font-size: 72px;
+  margin:0;
+  color: #fff7ef;
+  font-family: 'georgia',serif;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #4e1a2d;
+  margin-bottom: 2px;
+}
+.hero-overlay{
+  background: rgba(225,248,242,0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 50px 70px;
+  border: 1px solid rgba(225,225,225,0.25);
+  border-radius: 28px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  color: #fff;
+  max-width: 750px;
+}
+.small-text{
+  font-size: 18px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #f4e6d7;
+}
+.hero-desc{
+  font-size: 20px;
+  margin: 18px 0 30px;
+  color: #fbeee6;
+  line-height: 1.7;
+}
+.hero-btn{
+  display: inline-block;
+  padding: 14px 38px;
+  background: linear-gradient(135deg,#9c5c63,#6e2f38);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(110,47,56,0.35);
+  transition: 0.3 ease;
+}
+.hero-btn:hover{
+  transform: translatez(-3px);
+  background-color: #b89167;
+  letter-spacing: 3px;
+}
+.btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+  background-color: rgb(135, 55, 59);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding:40px;
+  
+}
+.btn a{
+   text-decoration: none;
+   color: white;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Services */
+.services {
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  color: white;
+  background:#984f5b;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px  rgb(128, 96, 109);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card h3 {
+  padding: 15px;
+}
+ .promo-banner {
+            display: flex;
+            background: #e1c1b6;
+            margin: 60px;
+            border-radius: 25px;
+            overflow: hidden;
+            height: 350px;
+            border: 1px solid #b8b2aa;
+            flex-direction: row;
+          }
+          .promo-content {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+          }
+          .sale-tag {
+            color: #8e7e73;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 20px;
+          }
+          .promo-content h2 {
+            color: #6d3a3c;
+            font-size: 38px;
+            margin-bottom: 15px;
+          }
+          .highlight {
+            color: #f9f6f1;
+          }
+          .promo-content p {
+            color: #eee4da;
+            margin-bottom: 30px;
+            font-size: 18px;
+          }
+
+          .shop-btn {
+            width: 280px;
+
+            padding: 15px 0;
+
+            background: #6d3a3c;
+            color: #f9f6f1;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+          }
+         button a{
+          text-decoration: none;
+          color: white;
+         }
+          .shop-btn:hover {
+            background: #c9b399;
+            transform: scale(1.03); 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          }
+          .promo-image {
+            flex: 1;
+          }
+          .promo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+    h2{
+      color: #8e7e73;
+    }
+    .call-icon {
+            width: 25px;       
+            height: 18px;
+            fill: #28a745;     
+            cursor: pointer;
+            transition: fill 0.3s;
+        }
+        .call-icon:hover {
+            fill: #1e7e34;     
+        }
+  </style>
+</head>
+<body>
+        <nav>
+    <h1>Aura Beauty</h1>
+    <ul>
+      <li><a href="safia.html">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="acc"><a href="LOGIN.html">Account</a></li>
+     
+    </ul>
+  </nav>
+  <section class="hero">
+    <div class="hero-overlay">
+      <p class="small-text">Welcome to</p>
+      <h2>Aura Beauty</h2>
+      <p class="hero-desc">Beauty is not a luxury , it is a feeling of confidence</p>
+      <a href="LOGIN.html" class="hero-btn">Book Now</a>
+    </div>
+  </section> 
+  <section class="promo-banner">
+            <div class="promo-content">
+              <span class="sale-tag">Season Offers</span>
+              <h2>Discount Up To <span class="highlight">25%</span></h2>
+              <p>
+                Enjoy the best products at fantastic price for a limited time
+              </p>
+              <button class="shop-btn"><a href="cart.html">Shopping Now</a></button>
+            </div>
+            <div class="promo-image">
+              <img src="try.jpeg" alt="خصومات" />
+            </div>
+          </section>
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+    <a href="mona.html"><img src="hr3.jpeg"></a>
+    <h3>Hair</h3>
+  </div>
+
+  <div class="card">
+    <a href="zina.html"><img src="pro5.jpeg"></a>
+    <h3>Makeup</h3>
+  </div>
+
+  <div class="card">
+    <a href="nora.html"><img src="pro2.jpeg"></a>
+    <h3>Beauty Products</h3>
+  </div>
+
+  <div class="card">
+    <a href="fatima.html"><img src="nails.jpeg"></a>
+    <h3>manicure</h3>
+  </div>
+
+  <div class="card">
+    <a href="asma.html"><img src="facial.jpeg"></a>
+    <h3>Facial and Spa</h3>
+  </div>
+
+</div>
+
+  </section>
+   <footer id="about">
+ <h3><b>© 2026 Aura Beauty Salon | All Rights Reserved</b></h3> 
+ <h3><svg class="call-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.12.37 2.33.57 3.54.57.55 0 1 .45 1 1V21c0 
+        .55-.45 1-1 1C10.07 22 2 13.93 2 3c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.21.2 2.42.57 3.54.11.35.03.73-.24 
+        1.05l-2.21 2.2z"/>
+    </svg>  Contact</h3>
+    <p>77800000 | aurabeauty@gmail.com</p>
+  <a href="#">Privacy and Policy</a> |
+<a href="#">Terms and Conditions</a></p>
+  </footer>
+</body>
+</html>
